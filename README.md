@@ -1,69 +1,37 @@
-[![Building SCORESIST — Eren Deniz Karaman](https://raw.githubusercontent.com/OUTATlME/OUTATlME/main/assets/profile-banner.png)](https://scoresist.com)
+<a href="https://scoresist.com"><img src="https://raw.githubusercontent.com/OUTATlME/OUTATlME/main/assets/banner.png" alt="SCORESIST — live scores with the story of every match" width="100%"></a>
 
-# Hi, I'm Eren Deniz Karaman.
+I build **[SCORESIST](https://scoresist.com)**, a live sports app for football, basketball, the NBA, volleyball and Formula 1. I run the product end to end: what we build, how it looks and how it holds up on match day.
 
-I'm building **SCORESIST**, a sports platform that connects scores with the story of a match: events, lineups, standings, teams and players.
+## What it does
 
-I lead the product direction, define requirements and test the experience, from the daily match feed to the details on the pitch.
+- **Live scores that keep up.** Every live match on one screen, refreshed every 15 seconds, with goals, cards and substitutions as they happen.
+- **A full match centre.** Stadium photo, scorers, statistics, player ratings, head-to-head, absences and official highlight videos where available.
+- **Lineups on the pitch.** Formations, player photos, ratings and match events in one view.
+- **Standings with context.** Qualification zones, recent form, home and away tables, and live league positions next to each score.
+- **Built for fans.** Google sign-in, favourites synced across devices, live match chat, fan ratings and themes in your club's colours.
 
-**[Explore the live app →](https://scoresist.com)** · **[Engineering notes](https://github.com/OUTATlME/OUTATlME/blob/main/ENGINEERING.md)**
+<img src="https://raw.githubusercontent.com/OUTATlME/OUTATlME/main/assets/screens.png" alt="SCORESIST on a phone: live matches, a match centre, a lineup and a league table" width="100%">
 
-## SCORESIST — Signature of Sports
+<img src="https://raw.githubusercontent.com/OUTATlME/OUTATlME/main/assets/desktop.png" alt="SCORESIST on desktop: sport tabs, a date strip and league-grouped results" width="100%">
 
-**Scores are the starting point. The match is the story.**
+## Under the hood
 
-Football, basketball, volleyball and Formula 1 sections share a consistent interface, with feature depth shaped by each sport and its available data.
+- **App:** Flutter, Riverpod and GoRouter. Live on the web; Android build in testing.
+- **API:** NestJS and TypeScript on PostgreSQL with Prisma.
+- **Data:** commercial sports data feeds, synced by background jobs that share a fixed request budget.
+- **Accounts:** Supabase Auth with Google sign-in, and row-level security on every table.
+- **Delivery:** GitHub Actions checks every change; the web app ships to Firebase Hosting and the API to Railway.
 
-- **Follow the schedule:** browse fixtures and results by date, sport, league and country.
-- **Understand the action:** explore football goals, cards, substitutions and match statistics.
-- **Read the lineup:** see formations, player portraits and event markers on a dedicated pitch.
-- **Explore the context:** move between matches, leagues, teams and player profiles.
-- **Make it yours:** use favorites and choose light, dark or team-inspired themes.
-
-## Inside the app
-
-### The match feed
-
-Sports navigation, league grouping and country context make the daily schedule easy to explore.
-
-[![SCORESIST English match feed with sports navigation and league-grouped results](https://raw.githubusercontent.com/OUTATlME/OUTATlME/main/assets/match-feed.jpg)](https://scoresist.com)
-
-### Lineups and match context
-
-Provider-supplied formations, player identities and event indicators come together on the pitch. This view shows the upper section of the scrollable two-team lineup.
-
-[![SCORESIST English lineup view with formations, player portraits and event indicators](https://raw.githubusercontent.com/OUTATlME/OUTATlME/main/assets/lineups.jpg)](https://scoresist.com)
-
-*Screenshots from the public web app, captured on 14 September 2026.*
-
-## Behind the product
-
-| Area | Technologies and purpose |
-| --- | --- |
-| Interface | Flutter, Dart, Riverpod and GoRouter |
-| Backend | NestJS, TypeScript and REST APIs |
-| Data | PostgreSQL, Supabase and provider integrations |
-| Synchronization | Background jobs, request budgets and event reconciliation |
-| Delivery | GitHub Actions, Firebase Hosting and Railway |
-
-Three engineering priorities guide the work:
-
-1. **Keep scores moving.** Separate fast score checks from heavier event collection and follow up on late events.
-2. **Use the request budget carefully.** Prioritize live and upcoming matches while retaining capacity for historical data and enrichment.
-3. **Verify what reaches users.** Combine automated checks, visual review and deployed web artifact verification.
-
-[Read the engineering decisions and verification notes →](https://github.com/OUTATlME/OUTATlME/blob/main/ENGINEERING.md)
+Since August 2026: **375 merged pull requests** and **5,000+ automated tests** running on every change.
 
 ## How I work
 
-I combine product direction and hands-on testing with AI-assisted development. I evaluate implementation choices, review outcomes and refine the details through real use.
+- **Product:** I decide what gets built and in what order, and define how every feature should behave.
+- **Design:** I direct every screen, from layout and colour to match-day details, and approve the renders before release.
+- **Testing:** I test each change on real matches and real phones, from live scores to push alerts.
+- **Operations:** I run releases and the production side: hosting, database, sign-in, app-store accounts and costs.
+- **Data quality:** I track data across leagues and decide how the app handles gaps and provider errors.
 
-## Current status
+The code is written with AI coding assistants under my direction, and nothing ships without my sign-off.
 
-**The web app is live and actively evolving.** Data coverage varies by sport and competition. Formula 1 currently covers schedules and results. Account activation, Android store publication and broader release-language coverage remain future work.
-
-This profile is the public SCORESIST showcase. Application source code is maintained privately.
-
-**[Try SCORESIST →](https://scoresist.com)**
-
-[Asset and data credits](https://github.com/OUTATlME/OUTATlME/blob/main/NOTICE.md)
+<sub>The application source code is private. Club names, logos, photos and match data belong to their respective owners and data providers.</sub>
